@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+<style>
+nav {
+    height: 10vh;
+    background: rgba(0, 0, 0, 0.76);
+    
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto !important;
+}
+.navList li a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    
+}
+
+.navList li a:link,
+.navList li a:visited {
+    transition: all 0.4s ease 0s;
+}
+.navList li a:hover{
+    color: #5388ff;
+}
+.burger {
+    z-index: 50;
+}
+
+h6 {
+        padding-top: 2% ;
+        padding-left: 1%;
+    }
+
+
+@media only screen and (max-width: 767px){
+    .l {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+    }
+    nav {
+        position: relative;
+    }
+    .burger {
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%,-50%);
+    }
+    .navList {
+        z-index: 10;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.76);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -20%);
+        -webkit-clip-path: circle(100px at 90% -20%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    
+    .navList.open{
+        clip-path: circle(1000px at 90% -20%);
+        -webkit-clip-path: circle(1000px at 90% -20%);
+        pointer-events: all;
+    }
+    
+    .navList li {
+        opacity: 0;
+    }
+    .navList li a{
+        font-size: 25px;
+    }
+    .navList li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .navList li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .navList li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    li.fade{
+        opacity: 1;
+    }
+    .change .l {
+        margin: -5px;
+        width:35px;
+        transition: 0.3s ease;
+    }
+    .change .l1{
+        transform:translateX(-8px) translateY(5px) rotateZ(-45deg);
+    }
+     .change .l2{
+        opacity: 0;
+    }
+     .change .l3{
+        transform:translateX(-8px) translateY(5px) rotateZ(45deg);
+    }
+    
+    h6 {
+        margin-top: 4%;
+        margin-left: 3%;
+    }
+    
+    
+    /************************/
+    .floating{
+    margin-left: 30%;
+    margin-top: auto;
+}
+
+}
+
+
+
+
+
+* {
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('imgs/back.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+  
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0;
+    padding: 5%;
+    }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+h6 {
+    height: 100%;
+    display: inline-block;
+    float: left;
+    color: #fff;
+    font-family: 'Oswald';
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 833px) {
+    .card-body a {
+    font-size: 20px !important;
+}
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0px;
+  text-align: center;
+  background-color: #000000;
+}
+
+#pic1{
+    object-fit: cover;
+}
+
+
+.card-body a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+}
+.card-body a:link,
+.card-body a:visited {
+    transition: all 0.4s ease 0s;
+}
+.card-body a:hover{
+    color: #5388ff;
+}
+
+.footSpacer {
+    margin: 20px;
+    padding: 30px;
+    content: " ";
+    height: 50px;
+}
+</style>
+</head>
+<body>
+
+        <nav>
+                <h6 style="color: white;">ASTRA'20</h6>
+               <div id="menu" class="burger" onclick="onClickMenu()">
+                   <div class="l l1"></div>
+                   <div class="l l2"></div>
+                   <div class="l l3"></div>
+               </div>
+               <ul class="navList">
+                   <li><a href="#">Home</a></li>
+                   <li><a href="#">Events</a></li>
+                   <li><a href="#">Contact</a></li>
+               </ul>
+           </nav>
+
+
+
+<div class="row">
+        <div class="column">
+                <div class="card">
+                  <img id="pic1" class="card-img-top"  src="imgs/hacker.jpg">
+                  <div class="card-body"><a href="#">Workshop</a></div>
+                </div>
+              </div>
+
+  <div class="column">
+        <div class="card">
+          <img id="pic1" class="card-img-top"  src="imgs/hacker.jpg">
+          <div class="card-body"><a href="#">Competitions</a></div>
+        </div>
+      </div>
+  
+      <div class="column">
+            <div class="card">
+              <img id="pic1" class="card-img-top"  src="imgs/events.jpg">
+              <div class="card-body"><a href="#">Events</a></div>
+            </div>
+          </div>
+
+         
+</div>
+<div class="footSpacer">
+
+</div>
+<script src="js/Homemain.js"></script>
+</body>
+</html>
